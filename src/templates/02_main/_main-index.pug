@@ -1,0 +1,201 @@
+//MAIN
+-var anchors = [{href: "aboutUs", text: 'About Us'}, {href: "features", text: 'Features'}, {href: "advantages", text: 'Advantages'}, {href: "testimonials", text: 'Testimonials'}, {href: "ourTeam", text: 'Our Team'}, {href: "faqs", text: 'FAQs'}, {href: "howItsWork", text: 'How Its Work'}, {href: "latestFromBlog", text: 'Latest From the Blog'}, {href: "ourPartners", text: 'Our partners'}, {href: "contacts", text: 'Contact us'}];
+main.page-content
+	//Section-2 About Us
+	section.well.well--1
+		.container
+			.header-template
+				h2.header-template__title(id= anchors[0].href)= anchors[0].text
+				.header-template__text Lorem ipsum dolor sit amet, cetero temporibus ex nec. Et facilisis definiebas est, nec et autem impetus oportere, vim te exerci noster omnium. Habeo dicam vim at, sale possit nostrum et pro.
+
+			-var aboutUsList = [{img: '1@2x.png' ,title: 'Exclusive Shortcodes', text: 'Malorum dolores gloriatur pro at, id offendit lucilius democritum quo. Ludus ubique fastidii dolores sit et persius reformidans.'}, {img: '2@2x.png' ,title: '100% valid and clean code', text: 'Malorum dolores gloriatur pro at, id offendit lucilius democritum quo. Ludus ubique fastidii dolores sit et persius reformidans.'}, {img: '3@2x.png' ,title: 'Free Lifetime Updates', text: 'Malorum dolores gloriatur pro at, id offendit lucilius democritum quo. Ludus ubique fastidii dolores sit et persius reformidans.'}, {img: '4@2x.png' ,title: '24/7/365 Customer Support', text: 'Malorum dolores gloriatur pro at, id offendit lucilius democritum quo. Ludus ubique fastidii dolores sit et persius reformidans.'}];
+			ul.tile-template
+				include ../00_mixins/__aboutUs
+				for data in aboutUsList
+					+cardContext(data)
+
+	//Section-3 Features
+	section.well.well--2.bg-gray
+		.container
+			.header-template
+				h2.header-template__title(id= anchors[1].href)= anchors[1].text
+				.header-template__text Lorem ipsum dolor sit amet, cetero temporibus ex nec. Et facilisis definiebas est, nec et autem impetus oportere, vim te exerci noster omnium. Habeo dicam vim at, sale possit nostrum et pro.
+
+			.features-wrapp
+				-var featuresList = [{img: '5@2x.png' ,title: 'Instant Skins Switcher', text: 'Switch styles instantly; choose among Material, Flat, Minimal, Grunge, Metro, 8-bit or Non-Standard Geometry.'}, {img: '6@2x.png' ,title: 'Various Scripts Included', text: 'Various Scripts are already on a board. Use Owl Carousel, Tabs etc. for your needs'}, {img: '7@2x.png' ,title: 'Fully Responsive Design', text: 'Product is tested on the common devices. It will render and scale on any possible screen.'},];
+				ul.features-template
+					include ../00_mixins/__features
+					for data in featuresList
+						+cardContext(data)
+
+				.silhouette
+					.silhouette__red
+					.silhouette__blue
+
+	//Section-4 Advantages
+	section.well.well--1.bg-secondery.clr-white
+		.container
+			.header-template
+				h2.header-template__title(id= anchors[2].href)= anchors[2].text
+				.header-template__text Lorem ipsum dolor sit amet, cetero temporibus ex nec. Et facilisis definiebas est, nec et autem impetus oportere, vim te exerci noster omnium. Habeo dicam vim at, sale possit nostrum et pro.
+
+			-var advantagesList = [{title: 'Cu tantas platonem', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est.'}, {title: 'Aperiam suscipiantur', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est.'}, {title: 'Nusquam facilisis', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est.'}, {title: 'Ex vel legimus', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est.'}, {title: 'Nusquam facilisis', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est.'}, {title: 'Ex vel legimus', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est.'}, {title: 'Aperiam suscipiantur', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est.'}, {title: 'Cu tantas platonem', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est.'}];
+			ol.advantages-template
+				include ../00_mixins/__advantages
+				for data in advantagesList
+					+cardContext(data)
+
+
+
+	//Section-5 Testimonials
+	section.well.well--2.bg-gray
+		.container
+			.header-template
+				h2.header-template__title(id= anchors[3].href)= anchors[3].text
+
+			// Swiper
+			.swiper-container2.carousel(id="testimonials-carousel")
+				.swiper-wrapper
+					.swiper-slide.carousel__item
+						img.carousel__logo(src="images/quote@2x.png", alt="")
+						.carousel__comment Vis quaeque inermis atomorum cu. Aperiam suscipiantur at pro. Nec paulo essent hendrerit ut, mel cu oblique eripuit maiestatis.
+						.carousel__avatar-wrapp
+							img.carousel__avatar(src="http://www.thehindubusinessline.com/multimedia/dynamic/02847/BL11_03_DAMODARMAL_2847789f.jpg", alt="")
+						.carousel__name-and-position
+							a.carousel__name(href="#") Rob Singer
+							a.carousel__position(href="#") Web Developer
+
+					.swiper-slide.carousel__item
+						img.carousel__logo(src="images/quote@2x.png", alt="")
+						.carousel__comment Vis quaeque inermis atomorum cu. Aperiam suscipiantur at pro. Nec paulo essent hendrerit ut, mel cu oblique eripuit maiestatis.
+						.carousel__avatar-wrapp
+								img.carousel__avatar(src="images/user2.png", alt="")
+						.carousel__name-and-position
+							a.carousel__name(href="#") Rob Singer
+							a.carousel__position(href="#") Web Developer
+
+					.swiper-slide.carousel__item
+						img.carousel__logo(src="images/quote@2x.png", alt="")
+						.carousel__comment Vis quaeque inermis atomorum cu. Aperiam suscipiantur at pro. Nec paulo essent hendrerit ut, mel cu oblique eripuit maiestatis.
+						.carousel__avatar-wrapp
+							img.carousel__avatar(src="images/user3.png", alt="")
+						.carousel__name-and-position
+							a.carousel__name(href="#") Rob Singer
+							a.carousel__position(href="#") Web Developer
+
+					.swiper-slide.carousel__item
+						img.carousel__logo(src="images/quote@2x.png", alt="")
+						.carousel__comment Vis quaeque inermis atomorum cu. Aperiam suscipiantur at pro. Nec paulo essent hendrerit ut, mel cu oblique eripuit maiestatis.
+						.carousel__avatar-wrapp
+								img.carousel__avatar(src="images/user4.png", alt="")
+						.carousel__name-and-position
+							a.carousel__name(href="#") Rob Singer
+							a.carousel__position Web Developer
+
+			// Add Pagination
+			.swiper-pagination.carousel__pagination
+
+	//Section-6 Our Team
+	section.well.well--1
+		.container
+			.header-template
+				h2.header-template__title(id= anchors[4].href)= anchors[4].text
+
+			-var teamList = [{img: 'user1.png', name: 'Alan Sobakovich', position: 'Founder', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est.'}, {img: 'user2.png', name: 'John Mu', position: 'Product Manager', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est.'}, {img: 'user3.png', name: 'Melissa Jade', position: 'Designer', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est.'}, {img: 'user4.png', name: 'Greg Mercury', position: 'Developer', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est.'}];
+			ul.team-template
+				include ../00_mixins/__team
+				for data in teamList
+					+cardContext(data)
+
+	//Section-7 FAQs
+	section.well.well--1.bg02
+		.container
+			.header-template
+				h2.header-template__title(id= anchors[5].href)= anchors[5].text
+
+			.fag
+				-for(var i = 0; i < 3; i ++)
+					ul.accordion(data-accordion="accordion-" + (i + 1) + "")
+						-for(var j = 0; j < 3; j ++)
+							li.accordion__item
+								.accordion__head Head
+									span.accordion__icons
+										i.material-icons add
+								.accordion__cnt Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.
+
+	//Section-8 How Its Work
+	section.well.well--1
+		.container
+			ul.workIt
+				li.workIt__item
+					iframe(src='https://www.youtube.com/embed/Ok2VamxrYAY', frameborder='0', allowfullscreen='')
+
+				li.workIt__item
+					.workIt__cnt
+						h2.workIt__title(id= anchors[6].href)= anchors[6].text
+						a.workIt__link(href="#") Lorem ipsum dolor sit amet, cetero temporibus ex nec. Et facilisis definiebas est.
+						.workIt__text Malorum dolores gloriatur pro at, id offendit lucilius democritum quo. Ludus ubique fastidii dolores sit et persius reformidans. Ei vide movet tibique ius, eos vivendo consetetur theophrastus cu. Eum erroribus necessitatibus ne. Eius singulis ea his, debitis nonumes at per  appareat ponderum eos.
+
+	//Section-9 beners
+	section
+		.baner
+			.baner__item
+				a.baner__link(href="#")
+					img.baner__img(src="images/img-item-1.png", alt="")
+			.baner__item
+				a.baner__link(href="#")
+					img.baner__img(src="images/img-item-2.png", alt="")
+			.baner__item
+				a.baner__link(href="#")
+					img.baner__img(src="images/img-item-3.png", alt="")
+			.baner__item
+				a.baner__link(href="#")
+					img.baner__img(src="images/img-item-4.png", alt="")
+
+
+	//Section-10 Latest From the Blog
+	section.well.well--1.bg-gray
+		.container
+			.header-template
+				h2.header-template__title(id= anchors[7].href)= anchors[7].text
+				.header-template__text Lorem ipsum dolor sit amet, cetero temporibus ex nec. Et facilisis definiebas est, nec et autem impetus oportere, vim te exerci noster omnium. Habeo dicam vim at, sale possit nostrum et pro.
+
+			.galery
+				.galery__item
+					.galery__img-wrap
+						img.galery__img(src="images/img-1.jpg" alt="")
+						.galery__overlay
+						a.galery__fancy.fancybox(href="images/img-1.jpg" rel="group" title="No nam conceptam suscipiantur ksdhlfjs dflsjdf sfdf sdf sdf")
+							i.material-icons open_in_new
+						.galery__info
+							time.galery__time(datetime="2012-12-23") 2012-12-23
+							.galery__text No nam conceptam suscipiantur ksdhlfjs dflsjdf sfdf sdf sdf
+				.galery__item
+					.galery__img-wrap
+						img.galery__img(src="images/img-2.jpg" alt="")
+						.galery__overlay
+						a.galery__fancy.fancybox(href="images/img-2.jpg" rel="group" title="No nam conceptam suscipiantur ksdhlfjs dflsjdf sfdf sdf sdf")
+							i.material-icons open_in_new
+						.galery__info
+							time.galery__time(datetime="2012-12-23") 2012-12-23
+							.galery__text No nam conceptam suscipiantur ksdhlfjs dflsjdf sfdf sdf sdf
+
+
+	//Section-5 Our partners
+	section.well.well--2
+		.container
+			.header-template
+				h2.header-template__title(id= anchors[8].href)= anchors[8].text
+
+			// Swiper
+			.swiper-container.partner(id="partner-carousel")
+				.swiper-wrapper
+					.swiper-slide.partner__item
+						a.partner__link(href="#")
+							img.partner__logo(src="images/templatemonster.png", alt="")
+					.swiper-slide.partner__item
+						a.partner__link(href="#")
+							img.partner__logo(src="images/motocms.png", alt="")
+					.swiper-slide.partner__item
+						a.partner__link(href="#")
+							img.partner__logo(src="images/templatetuning.png", alt="")

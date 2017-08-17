@@ -1,0 +1,36 @@
+/*
+* @section      Components
+* @Components	Silhouette
+*/
+
+.silhouette {
+  display: flex;
+  width: calc(50% - 15px);
+  position: relative;
+  &:before{
+    position: absolute;
+    content: url("../../images/depositphotos-14779185-original-copy.png");
+    top: -23px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__red,
+  &__blue{
+    width: 285px;
+    height: 487px;
+  }
+
+  &__red{
+    background: $secondary;
+  }
+  &__blue{
+    background: $primary;
+  }
+}
+
+@media (max-width: 767px) {
+  .silhouette{
+    display: none;
+  }
+}

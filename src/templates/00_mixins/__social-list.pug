@@ -1,0 +1,5 @@
+mixin social-list(socialList)
+    ul.social-list.social-list--useicon
+        each icon in socialList
+            li.social-list__item
+                a.social-list__link.fa(href="#" class="fa-" + icon)

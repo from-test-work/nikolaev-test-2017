@@ -1,0 +1,41 @@
+/*
+* @section      Components
+* @Components	GRID style
+*/
+
+.container{
+	width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.template{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+	margin: 0 -15px;
+
+	.col{
+		&-4{
+			width: 280px;
+			margin: 0 15px;
+		}
+		&-8{
+			width: calc( (100% / 2) - 15px );
+			margin: 0 15px;
+		}
+		&-12{
+			width: 900px;
+			margin: 0 15px;
+		}
+	}
+}
+
+
+
+.template.template--reverse{
+    flex-direction: row-reverse;
+}

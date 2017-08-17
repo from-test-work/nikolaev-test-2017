@@ -1,0 +1,43 @@
+//========================================================
+//                     Variables
+//=========================================================
+
+// Resolutions
+$screen-xxs-min: 480px;
+$screen-xs-min: 576px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+// Fonts
+$fa: 'FontAwesome';
+$mi: 'Material Icons';
+$lato-font-family: 'Lato', sans-serif;
+$condenced-font-family: 'Roboto Condensed', sans-serif;
+
+$default-font-family: 'Roboto', sans-serif;
+$default-font-weight: 400;
+$default-font-size: 20px;
+$default-line-height: 34px;
+
+
+
+// Colors
+$white: #ffffff;
+$black: #000000;
+$default: #333333;
+$grey: #06203d;
+
+$primary: #5dbdfe;
+$secondary: #f34235;
+$secondary-dark: #dd3c30;
+$primary--darkest: #323232;;
+
+$header-color: $white;
+$header-bg: $white;
+
+$content-color: $default;
+$content-bg: $white;
+
+$footer-color: $white;
+$footer-bg: $primary--darkest;

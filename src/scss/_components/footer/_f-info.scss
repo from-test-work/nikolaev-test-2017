@@ -1,0 +1,30 @@
+/*
+* @section      Components
+* @Components	Footer Information
+*/
+
+
+.f-info{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 80px auto 0;
+  &__title{}
+  &__cnt{}
+  &__address{
+    font-weight: 700;
+  }
+  &__tel{}
+}
+
+.f-info{
+  * + &__tel{
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .f-info{
+    margin-top: 30px;
+  }
+}

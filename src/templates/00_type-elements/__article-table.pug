@@ -1,0 +1,85 @@
+table(border="1" cellspacing="0")
+
+    thead
+        tr
+            td Испытание
+            td.even Временные отметки А
+            td Временные отметки Б
+
+    tbody
+        tr
+            td(style="padding: 10px 0 0 15px") Проверка первого показателя
+            td.even
+                -var tableData = [['05:50', '06:50', '10:55', '11:55'], ['13:45', '14:40', '15:35', '17:55'], ['', '', '', '']];
+                //-console.log(tableData.length);
+                table
+                    -for(var i = 0; i < 3; i++)
+                        tr
+                            -for(var j = 0; j < 4; j++)
+                                td= tableData[i][j]
+            td
+                -var tableData = [['05:50', '06:55', '10:55', '11:55'], ['13:45', '14:40', '15:35', '17:55'], ['19:45', '', '', '']];
+                //-console.log(tableData.length);
+                table
+                    -for(var i = 0; i < 3; i++)
+                        tr
+                            -for(var j = 0; j < 4; j++)
+                                td= tableData[i][j]
+
+        tr
+            td(style="padding: 10px 0 0 15px") Проверка второго показателя
+            td.even
+                -var tableData = [['08:05', '09:05', '10:05', '16:55'], ['18:55', '', '', '']];
+                //-console.log(tableData.length);
+                table
+                    -for(var i = 0; i < 2; i++)
+                        tr
+                            -for(var j = 0; j < 4; j++)
+                                td= tableData[i][j]
+            td
+                -var tableData = [['', '', '', ''], ['', '', '', '']];
+                //-console.log(tableData.length);
+                table
+                    -for(var i = 0; i < 2; i++)
+                        tr
+                            -for(var j = 0; j < 4; j++)
+                                td= tableData[i][j]
+        tr
+            td(rowspan="4" style="padding: 10px 0 0 15px") Проверка третьего показателя
+            th(colspan="2") Под давлением
+        tr
+            td.even
+                -var tableData = [['05:50', '06:55', '10:55', '11:55'], ['13:45', '14:40', '15:35', '17:55']];
+                //-console.log(tableData.length);
+                table
+                    -for(var i = 0; i < 2; i++)
+                        tr
+                            -for(var j = 0; j < 4; j++)
+                                td= tableData[i][j]
+            td
+                -var tableData = [['05:50', '06:55', '10:55', '11:55'], ['13:45', '14:40', '15:35', '17:55']];
+                //-console.log(tableData.length);
+                table
+                    -for(var i = 0; i < 2; i++)
+                        tr
+                            -for(var j = 0; j < 4; j++)
+                                td= tableData[i][j]
+        tr
+            th(colspan="2") Без давления
+        tr
+            td.even
+                -var tableData = [['05:50', '06:55', '10:55', '11:55'], ['13:45', '14:40', '15:35', '17:55']];
+                //-console.log(tableData.length);
+                table
+                    -for(var i = 0; i < 2; i++)
+                        tr
+                            -for(var j = 0; j < 4; j++)
+                                td= tableData[i][j]
+            td
+                -var tableData = [['05:50', '06:55', '10:55', '11:55'], ['13:45', '14:40', '15:35', '17:55']];
+                //-console.log(tableData.length);
+                table
+                    -for(var i = 0; i < 2; i++)
+                        tr
+                            -for(var j = 0; j < 4; j++)
+                                td= tableData[i][j]

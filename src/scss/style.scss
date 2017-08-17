@@ -1,0 +1,621 @@
+@import "_core/variables";
+@import "_core/mixins";
+@import "_core/normalize";
+/*
+* @section      Grid module
+* @description  This section use grid
+*/
+@import "_modules/grid";
+
+/*
+* @section      Fonts
+* @description  This section  holds all icon fonts stored in template
+*/
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:300,400,500,700,900&subset=cyrillic');
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+/* fallback */
+@font-face {
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: url(https://fonts.gstatic.com/s/materialicons/v28/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+}
+/*========================================================
+                      Main Styles
+=========================================================*/
+/*
+* @section      Main Styles
+* @description  This section holds template default elements style declarations
+*/
+.page {
+	overflow: hidden;
+	.lt-ie9 & {
+		min-width: $screen-lg-min;
+	}
+}
+
+
+html {
+	font-size: 70px;
+
+	@media (max-width: $screen-sm-min - 1) and (max-width: $screen-md-min - 1) {
+		font-size: 14px;
+	}
+}
+
+body {
+	font-family: $default-font-family;
+	font-weight: $default-font-weight;
+	font-size: $default-font-size;
+	line-height: $default-line-height;
+	-webkit-text-size-adjust: none;
+	color: $content-color;
+	background: $content-bg;
+}
+
+/*========================================================
+                      Typography
+=========================================================*/
+/*
+* @subsection   Typography
+* @description  Describes default font settings for basic html elements and
+*               css classes
+*/
+
+h1, h2, h3, h4, h5, h6,
+.heading--1, .heading--2, .heading--3, .heading--4, .heading--5, .heading--6{
+
+}
+
+h1, .heading--1 {
+	font-size: 112px;
+	font-weight: 300;
+	line-height: 120px;
+	span{
+		display: block;
+		font-size: 34px;
+		font-weight: 400;
+		line-height: 32px;
+		margin-bottom: 30px;
+	}
+}
+h2, .heading--2 {
+	font-size: 45px;
+	font-weight: 400;
+	line-height: 60px;
+}
+
+h3, .heading--3{
+	font-size: 30px;
+	line-height: 42px;
+}
+h4, .heading--4{
+	font-size: 22px;
+	line-height: 26px;
+}
+h5, .heading--5{
+	font-size: 20px;
+	line-height: 24px;
+}
+h6, .heading--6{
+	font-size: 17px;
+	line-height: 20px;
+}
+
+p, .list, .contact-info {
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
+a {
+	cursor: pointer;
+}
+
+/*
+* @section      offsets
+* @description  This section contain offsets style
+*/
+
+h2 + .catallog-wrap{
+	margin-top: 29px;
+}
+h2 + .news-card-wrapper{
+	margin-top: 29px;
+}
+h2 + .news-asside-list{
+	margin-top: 25px;
+}
+h5 + .contacts{
+	margin-top: 17px;
+}
+
+p + p{
+	margin-top: 20px;
+}
+
+.brand + * {
+	margin-top: 130px;
+}
+
+.menu-list + * {
+	margin-top: 50px;
+}
+
+/*
+* @section      Helpers
+* @description  This section contain helpers style
+*/
+@import "_helpers/text-alignment";
+
+/*=======================================================
+                       Main Layout
+=========================================================*/
+/*
+* @subsection   Backgrounds
+* @description  Backgrounds custom styles
+*/
+.bg-white {
+	background: $white;
+}
+
+.bg-gray {
+	//background: linear-gradient(to bottom, rgba(222,222,222,1) 0%, rgba(226,226,226,1) 24%, rgba(230,230,230,1) 51%, rgba(232,232,232,1) 57%, rgba(240,240,240,1) 80%, rgba(240,240,240,1) 100%);
+	position: relative;
+	background: #f1f1f1;
+	&:before{
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 10px;
+		background: linear-gradient(to bottom, rgba(222,222,222,1) 20%, rgba(230,230,230,1) 51%, rgba(240,240,240,1) 100%);
+	}
+}
+
+.bg-secondery{
+	background: $secondary;
+}
+
+.bg01{
+	background: url("../images/bg01.png") 100% 100% no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+}
+
+.bg02{
+	background: url("../images/bg02.png") 100% 100% no-repeat;
+	background-size: cover;
+	height: 760px;
+}
+
+@media (max-width: ($screen-sm-min - 1) ) {
+	.bg02{
+		height: auto;
+		background: #e5d6b4;
+	}
+}
+
+/*
+* @subsection   Colors
+* @description  Colors custom styles
+*/
+.clr-white {
+	color: $white;
+}
+
+/*
+* @subsection   Well
+* @description  Describes section inner indents
+*/
+.well {
+	&__header {
+		padding-top: 140px;
+		padding-bottom: 100px;
+	}
+	&__footer {}
+}
+.well {
+	&--1{
+		padding-top: 120px;
+		padding-bottom: 120px;
+	}
+	&--2{
+		padding-top: 120px;
+		padding-bottom: 100px;
+	}
+	&--3{
+		padding-top: 120px;
+		padding-bottom: 40px;
+	}
+}
+/*=======================================================
+                        Components
+=========================================================*/
+/*
+* @section      Components
+* @description  This section holds all elements style declarations of template
+*/
+
+/*
+* @section      Components
+* @Components	Brand
+*/
+
+.brand{
+	display: inline-flex;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	&__slogan{
+		text-transform: uppercase;
+		font-size: 62px;
+		line-height: 1;
+		color: $white;
+		span{
+			display: inline-flex;
+			&:first-child{
+				font-weight: 900;
+			}
+			&:last-child{
+				font-weight: 300;
+			}
+		}
+	}
+}
+
+
+/*
+* @section      Components
+* @Components	form
+*/
+
+form{
+	display: flex;
+	flex-direction: column;
+	max-width: 370px;
+	padding: 30px;
+	background: #dadcdc;
+	box-shadow: 1px 1px 13px rgba(0, 0, 0, 0.3);
+}
+
+// default style
+$form--fsz: inherit !default;
+$form--lh: 1.2;
+$form--fw: inherit !default;
+$form--color: #cccccc !default;
+$form--border-sise: 1px !default;
+$form--border: $form--border-sise solid $form--color !default;
+$form--border-radius: 0+'px';
+// input style
+$form-input--height: 50px !default;
+$form-input--line-height: 50px !default;
+$form-input--padding-left: 10px !default;
+$form-input--padding-right: 10px !default;
+.form-el{
+	&__label{
+		background: $white;
+		//padding: 18px;
+		color: $default;
+		+ *{
+			margin-top: 10px;
+		}
+	}
+	&__input{
+		display: block;
+		text-align: left;
+		outline: none;
+		width: 100%;
+		background: $white;
+		border: $form--border;
+		height: $form-input--height;
+		padding-left: $form-input--padding-left;
+		padding-right: $form-input--padding-right;
+		-webkit-appearance: none;
+		border-radius: $form--border-radius;
+
+		opacity: 0.8;
+		color: $default;
+		font-family: $lato-font-family;
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: 22px;
+	}
+
+	&__btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 60px;
+		color: $default;
+
+		font-size: inherit;
+		font-weight: 700;
+		line-height: 22px;
+
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+		box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+		background-color: #5dbdfe;
+		padding: 20px auto;
+		outline: none;
+		border: none;
+		cursor: pointer;
+		position: relative;
+		text-transform: uppercase;
+		@include transition ( all 0.5s ease);
+	}
+
+	.one {
+		overflow: hidden;
+		color: $white;
+
+		.insider {
+			background-color: $white;
+			width: 100%;
+			height: 20px;
+			position: absolute;
+			left: -190px;
+			@include transform(rotateZ(45deg));
+		}
+		&:hover {
+			background-color: $secondary;
+			border-color: $white;
+			color: $white;
+			.insider {
+				@include transition(all 0.3s ease);
+				left: 220px;
+			}
+		}
+	}
+}
+
+.placeholder-effect{
+	::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+	::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+	:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+	:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+	:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+	:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+	:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+	:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+}
+
+
+/*
+* @subsection   Imports
+*/
+//mobile
+@import "_components/mobile/slide-menu";
+
+//header
+@import "_components/header/togleMenu";
+
+
+//main
+//@import "_components/main/product-page"; //main (product)
+
+
+//footer
+@import "_components/footer/f-info";
+@import "_components/footer/copyrate";
+@import "_components/footer/map";
+
+@import "_components/header-template";
+@import "_components/silhouette";
+@import "_components/tile-template";
+@import "_components/team-template";
+@import "_components/features-template";
+@import "_components/advantages-template";
+@import "_components/features-wrapp";
+
+@import "_components/baner";
+@import "_components/partners";
+@import "_components/carousel";
+@import "_components/accordion";
+@import "_components/galery";
+@import "_components/workIt";
+
+
+@import "_components/social-list";
+
+
+//@import "_components/hover-effect";
+
+
+/* ========================================================
+                     HEADER  Section
+=========================================================*/
+/*
+* @section      Page Header
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page header
+*/
+
+header, .page-header {
+	@extend .bg01;
+	color: $header-color;
+
+		.started-form{
+			margin-top: 150px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+}
+
+@media (max-width: ($screen-md-min - 1)) {
+	header, .page-header {
+		margin-top: 0;
+	}
+}
+
+/* ========================================================
+					 MAIN  Section
+=========================================================*/
+/*
+* @section      Page Content
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page content
+*/
+main, .page-content {
+	min-height: 100vh;
+	background: $content-bg;
+}
+
+/* ========================================================
+					 FOOTER  Section
+=========================================================*/
+/*
+* @section      Page Footer
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page footer
+*/
+footer, .page-footer {
+	background: $footer-bg;
+	color: $footer-color;
+}
+
+/* ========================================================
+					 MEDIA QUERY
+=========================================================*/
+/*
+$screen-xs-min: 576px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+*/
+@media (max-width: ($screen-lg-min - 1)) {
+	.well {
+		&--1{
+			padding-top: 70px;
+			padding-bottom: 70px;
+		}
+		&--2{
+			padding-top: 70px;
+			padding-bottom: 50px;
+		}
+		&--3{
+			padding-top: 70px;
+			padding-bottom: 70px;
+		}
+	}
+}
+
+@media (max-width: ($screen-md-min - 1)) {
+	h1{
+		font-size: 70px;
+		line-height: 70px;
+	}
+	.well{
+		&__header {
+			padding-top: 70px;
+			padding-bottom: 50px;
+		}
+	}
+
+
+	.brand__slogan {
+		font-size: 50px;
+	}
+
+	.brand + * {
+		margin-top: 70px;
+	}
+}
+@media (max-width: ($screen-sm-min - 1)) {
+	.well {
+		&--1{
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		&--2{
+			padding-top: 50px;
+			padding-bottom: 30px;
+		}
+		&--3{
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+	}
+}
+//mobile
+@media (max-width: ($screen-xs-min - 1)) {
+	.well {
+		&--1{
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		&--2{
+			padding-top: 30px;
+			padding-bottom: 20px;
+		}
+		&--3{
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	}
+
+	h1{
+		font-size: 30px;
+		line-height: 30px;
+	}
+	h1 span,
+	.heading--1 span{
+		font-size: 18px;
+		line-height: 1;
+		margin-bottom: 15px;
+	}
+
+	.brand{
+		&__slogan {
+			font-size: 30px;
+		}
+	}
+
+
+	.brand + * {
+		margin-top: 30px;
+	}
+
+	header .started-form,
+	.page-header .started-form{
+		margin: 30px auto;
+	}
+}
+
+
+
+
+
+.w3-animate-opacity {
+    animation: opac 0.8s;
+}
+
+@keyframes opac {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+

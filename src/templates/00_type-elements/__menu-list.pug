@@ -1,0 +1,48 @@
+ul.menu-list
+	li.menu-list__item
+		//LEVEL - 1
+		.menu-item.has-list(onclick="accordion('item-1')") Продукция
+		ul.menu-list--lev-1
+			li.menu-list__item
+				.lev1-list(id="item-1")
+					//LEVEL - 2
+					.menu-item Испытательные стенды
+					.menu-item.has-list(onclick="accordion('item-1-2')") Датчики
+					ul.menu-list--lev-2
+						li.menu-list__item
+							.lev2-list(id="item-1-2")
+								//LEVEL - 3
+								.menu-item Телеметрические системы whdihasdhashkdhaskhdjk
+								.menu-item Гидромуфты
+								.menu-item Электроника и ПО
+					.menu-item Телеметрические системы
+					.menu-item.has-list(onclick="accordion('item-1-4')") Гидромуфты
+					ul.menu-list--lev-2
+						li.menu-list__item
+							.lev2-list(id="item-1-4")
+								.menu-item Lorem dolor insum..
+								.menu-item Lorem dolor
+					.menu-item Электроника и ПО
+		//LEVEL - 1
+		.menu-item.has-list(onclick="accordion('item-2')") Области использования
+		ul.menu-list--lev-1
+			li.menu-list__item
+				.lev1-list(id="item-2")
+					//LEVEL - 2
+					.menu-item Lorem dolor insum..
+					.menu-item Lorem dolor
+		//LEVEL - 1
+		.menu-item.has-list(onclick="accordion('item-3')") Решения
+		ul.menu-list--lev-1
+			li.menu-list__item
+				.lev1-list(id="item-3")
+					//LEVEL - 2
+					.menu-item.has-list(onclick="accordion('item-3-1')") Измерение крутящего момента
+					ul.menu-list--lev-2
+						li.menu-list__item
+							.lev2-list(id="item-3-1")
+								//LEVEL - 3
+								.menu-item Lorem dolor insum..
+								.menu-item Lorem dolor
+					.menu-item Многоканальный сбор данных
+					.menu-item Испытание

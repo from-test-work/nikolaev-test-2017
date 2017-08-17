@@ -1,0 +1,31 @@
+//FOOTER
+-var anchors = [{href: "aboutUs", text: 'About Us'}, {href: "features", text: 'Features'}, {href: "advantages", text: 'Advantages'}, {href: "testimonials", text: 'Testimonials'}, {href: "ourTeam", text: 'Our Team'}, {href: "faqs", text: 'FAQs'}, {href: "howItsWork", text: 'How Its Work'}, {href: "latestFromBlog", text: 'Latest From the Blog'}, {href: "ourPartners", text: 'Our partners'}, {href: "contacts", text: 'Contact us'}];
+footer.footer
+    section.well.well--3
+        .container
+            .header-template
+                h2.header-template__title(id= anchors[9].href)= anchors[9].text
+
+            dl.f-info
+                dt
+                dd.f-info__cnt
+                    address.f-info__address 8901 Marmora Road, Glasgow, D04 89GR.
+                dt
+                dd.f-info__cnt
+                    span Telephone:
+                    a.f-info__tel(href="callto:+1 800 603 6035") +1 800 603 6035
+
+            -var socialList = ['facebook', 'twitter', 'google'];
+            include ../00_mixins/__social-list
+            +social-list(socialList)
+
+
+
+            .copyrate.offs2
+                span Colorful Flat
+                span &#169
+                .copyright-year
+                span All Rights Reserved
+
+    section
+        #map

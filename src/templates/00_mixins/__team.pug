@@ -1,0 +1,7 @@
+mixin cardContext(data)
+	li.team-template__item
+		.team-template__avatar-wrapp
+			img.team-template__avatar(src="/images/" + data.img , alt="")
+		a.team-template__name(href="#") !{data.name}
+		a.team-template__position(href="#") !{data.position}
+		.team-template__text !{data.text}

@@ -1,0 +1,35 @@
+/*
+* @section      Components
+* @Components	Baner
+*/
+
+.baner{
+  display: flex;
+  &__item{}
+  &__link{
+    display: block;
+  }
+  &__img{
+    width: 100%;
+  }
+}
+
+@media (max-width: ($screen-md-min - 1)){
+  .baner{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    &__item{
+      width: 50%;
+    }
+  }
+}
+
+
+@media (max-width: ($screen-xxs-min - 1)){
+  .baner{
+    &__item{
+      width: 100%;
+    }
+  }
+}

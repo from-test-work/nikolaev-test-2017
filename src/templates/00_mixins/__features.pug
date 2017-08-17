@@ -1,0 +1,8 @@
+mixin cardContext(data)
+	li.features-template__item
+		.features-template__asside
+			img.features-template__logo(src="/images/" + data.img , alt="")
+
+		.features-template__cnt
+			.features-template__title !{data.title}
+			.features-template__text !{data.text}

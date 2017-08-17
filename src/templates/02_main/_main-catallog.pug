@@ -1,0 +1,56 @@
+//MAIN
+main.page-content
+    //Section-1
+    section.well.well--1
+        .container
+            .template
+                // left template part
+                .col-4
+                    // asside menu
+                    include ../00_type-elements/__menu-list
+                    // asside menu
+                    h5 Контакты
+                    address.contacts(itemprop="address" itemscope itemtype="http://schema.org/PostalAddress")
+                        dl.contacts-list
+                            dt.contacts__types Телефон
+                            dd.contacts__phone
+                                a.contacts__link(href="tel:+7 (495) 308-90-60" itemprop="telephone") +7 (495) 308-90-60
+
+                            dt.contacts__types Почта
+                            dd.contacts__email
+                                a.contacts__link(href="mailto:info@magrtol.ru" itemprop="email") info@magrtol.ru
+
+                            dt.contacts__types Адрес
+                            dd.contacts__address
+                                span(itemprop="addressLocality") г. Москва,
+                                span(itemprop="streetAddress") 2-й Кожуховский пр-д, д.&nbsp;29, к. 2, стр. 16
+
+                // right template part
+                .col-12
+                    h2 Телеметрические системы
+                    // NEWS
+                    .catallog-wrap
+                        -for(var i = 0; i < 12; i++)
+                            .catallog-item
+                                .catallog-item-cnt
+                                    .catallog-item__corp Power Test Inc.
+                                    .catallog-item__title Портативный динамометр-гидротормоз серии Z
+                                    .catallog-item__img-wrap
+                                        img(src="http://www.prom-tex.org/img/work/nomencl/s_337.jpg" alt="")
+                                .catallog-item-overlay
+                                    .catallog-item__corp Power Test Inc.
+                                    .catallog-item__title Портативный динамометр-гидротормоз серии Z
+                                    dl.catallog-item__params
+                                        dt Мощность
+                                        dd 100–4500 л/с
+
+                                        dt Частота вращения
+                                        dd До 4000 об/мин
+
+                                        dt Крутящий момент
+                                        dd До 20340 Н*м
+
+                                        dt Назначение
+                                        dd Испытание судовых и автомобильных двигателей
+
+                                    a.catallog-item__btn(href="#") Показать подробности

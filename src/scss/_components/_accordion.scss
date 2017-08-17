@@ -1,0 +1,128 @@
+/*
+* @section      Components
+* @Components	Accordion
+*/
+
+.fag{
+  display: flex;
+  margin: 40px -15px 0;
+}
+
+.accordion{
+  width: calc(100% / 3);
+  margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  &__item{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 15px 0;
+    height: 76px;
+    background-color: #ff4538;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+    &--opened{
+      height: auto;
+      background-color: #dd3c30;
+      .accordion__cnt{
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+        animation: slideInDown 0.5s;
+      }
+      .accordion__icons i{
+        color: #dd3c30;
+      }
+    }
+  }
+
+  &__head{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 76px;
+    color: #ffffff;
+    font-family: $lato-font-family;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 0 calc(30px + 20px + 5px) 0 20px;
+  }
+  &__icons{
+    position: absolute;
+    background: $white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    i{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: #ff4538;
+      font-size: 24px;
+      transform: translateX(-50%)translateY(-50%);
+    }
+  }
+  &__cnt{
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    padding: 6px 20px 22px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 34px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: 0.3s ease all;
+  }
+}
+
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInDown {
+  animation-name: slideInDown;
+}
+
+
+@media (max-width: 767px){
+  .fag{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+  }
+  .accordion{
+    width: 100%;
+    &__item{
+      height: 40px;
+      margin: 10px 0;
+      &--opened{
+        height: auto;
+      }
+    }
+    &__head{
+      height: 40px;
+    }
+    &__icons{
+      width: 20px;
+      height: 20px;
+      i{
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+/*
+* @section      Components
+* @Components	Team Template
+*/
+
+.team-template{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin: 30px -15px 0;
+  &__item{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 270px;
+    margin: 30px 15px;
+  }
+
+  &__avatar-wrapp{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+  }
+  &__avatar{
+    border-radius: 50%;
+  }
+
+  &__name{
+    font-family: $lato-font-family;
+    font-size: 24px;
+    line-height: 46px;
+  }
+  &__position{
+    font-family: $lato-font-family;
+    font-size: 16px;
+    font-weight: 900;
+    color: $primary;
+  }
+
+  &__text{
+    text-align: center;
+    font-family: $lato-font-family;
+    opacity: 0.8;
+    width: 100%;
+  }
+}
+
+
+.team-template{
+  * + &__name{
+    margin-top: 20px;
+  }
+  
+  * + &__text{
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: ($screen-xs-min - 1)) {
+  .team-template{
+    &__item{
+      margin: 10px 5px;
+    }
+    &__avatar-wrapp{
+      width: 150px;
+      height: 150px;
+    }
+  }
+}

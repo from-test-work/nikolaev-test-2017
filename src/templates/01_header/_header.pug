@@ -1,0 +1,20 @@
+//HEADER
+header.page-header.well.well__header
+    .container
+        .menu-trigger
+        a.brand.text-center(href="/")
+            .brand__slogan
+                span colorful&nbsp;
+                span flat
+
+        h1.text-center
+            span The best open page template  for
+            | Web Proffesionals
+
+        -var formElements = [{id: 'fullName_f', type: 'text', placeholder: 'Full name'},{id: 'eMail_f ', type: 'email', placeholder: 'E-mail'},{id: 'phone_f', type: 'tel', placeholder: 'Phone'}]
+        form.form-el.started-form.placeholder-effect(action="#" method="POST")
+            each el in formElements
+                label.form-el__label(for= el.id)
+                    input.form-el__input(id= el.id type= el.type placeholder= el.placeholder)
+            button.form-el__btn.one(type="submit") Get Started Now!
+                .insider

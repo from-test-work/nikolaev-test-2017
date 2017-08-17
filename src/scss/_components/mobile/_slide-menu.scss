@@ -1,0 +1,128 @@
+/*
+* @section      Components
+* @Components	Slide Menu
+*/
+
+nav#slide-menu {
+  position: fixed;
+  top: 0;
+  left: -100px;
+  bottom: 0;
+  display: block;
+  float: left;
+  width: 100%;
+  max-width: 284px;
+  height: 100%;
+  transition: all 300ms;
+
+  > ul {
+    display: block;
+    margin: 40px 15px;
+    padding: 0;
+    list-style: none;
+    opacity: 0.5;
+
+    -moz-transition: all 300ms;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+
+    li {
+      color: $default;
+      padding: 6px 0;
+      cursor: pointer;
+      &:hover { color: $primary; }
+    }
+
+    li.sep {
+      margin-top: 7px;
+      padding-top: 14px;
+      border-top: 1px solid lighten(#556270, 10%);
+    }
+  }
+}
+
+body.menu-active nav#slide-menu { left: 0; }
+body.menu-active nav#slide-menu ul { left: 0; opacity: 1; }
+
+
+#page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  transition: all 300ms;
+}
+
+.menu-trigger {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 300ms;
+  z-index: 99999;
+  &:before{
+    position: absolute;
+    content: '\f0c9';
+    top: 50%;
+    left: 50%;
+    color: $white;
+    font-family: $fa;
+    font-size: 30px;
+    line-height: 30px;
+    transform: translateX(-50%)translateY(-50%);
+  }
+}
+
+body.menu-active div#page {
+  left: 285px;
+  border-radius: 7px 0 0 7px;
+  position: absolute;
+}
+body.menu-active div#page .menu-trigger {
+  left: 235px;
+  &:before{
+    position: absolute;
+    color: $default;
+    content: '\f00d';
+    z-index: 2;
+  }
+}
+
+
+
+
+#return-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba($primary, 0.7);
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  border-radius: 35px;
+  display: none;
+  transition: all 0.3s ease;
+  z-index: 99999;
+}
+#return-to-top i {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 16px;
+  top: 13px;
+  font-size: 19px;
+  transition: all 0.3s ease;
+}
+#return-to-top:hover {
+  background: rgba($primary, 0.9);
+}
+#return-to-top:hover i {
+  color: #fff;
+  top: 5px;
+}

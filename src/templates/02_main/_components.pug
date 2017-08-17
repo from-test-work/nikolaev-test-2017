@@ -1,0 +1,514 @@
+//====================section 
+section
+	h1 HEADER --> DESTRIBUTE
+	.container
+		//DESTRIBUTE
+		.official-distributor
+			.official-distributor__title Официальный дистрибьютор
+			ul.official-distributor__list.distributor-list
+				li.distributor-list__item
+					a.distributor-list__link(href="#") 
+						img.distributor-list__link-img(src="images/distributor-logo/distributor__1.png" alt="")
+				li.distributor-list__item
+					a.distributor-list__link(href="#") 
+						img.distributor-list__link-img(src="images/distributor-logo/distributor__2.png" alt="")
+				li.distributor-list__item
+					a.distributor-list__link(href="#") 
+						img.distributor-list__link-img(src="images/distributor-logo/distributor__3.png" alt="")
+				li.distributor-list__item
+					a.distributor-list__link(href="#") 
+						img.distributor-list__link-img(src="images/distributor-logo/distributor__1.png" alt="")
+				li.distributor-list__item
+					a.distributor-list__link(href="#") 
+						img.distributor-list__link-img(src="images/distributor-logo/distributor__2.png" alt="")
+	
+	h1 HEADER --> BRAND
+	.container
+		//BRAND
+		a.brand(href="#")
+			.brand-logo
+				img(src="images/logo.svg" alt="")
+			.brand-cnt 
+				.brand__title Промтекс
+				.brand__slogan
+					span Испытательные стенды
+					span Датчики
+					span Измерительная электроника
+
+	h1 HEADER --> NAV PANEL
+	.container
+		//NAV PANEL
+		-var navList = ['Продукция', 'Области использования', 'Решения', 'Услуги', 'О нас', 'Контакты'];
+		nav.nav-panel
+			ul.nav-list
+				each links in navList
+					li.nav-list__item
+						a.nav-list__link(href="#")= links
+
+	h1 HEADER --> HEADER SEARCH
+	.container
+		//HEADER SEACH
+		form.header-search(action="#" role="search")
+			input.header-search__input(type="text" placeholder="Поиск по марке и модели")
+			.header-search__submit
+				input(type="submit" value="")
+
+
+	h1 HEADER --> PROMTEX INFO
+	.container
+		//HEADER INFO
+		.promtex-info
+			a.promtex-info__tel(href="#") 8 (495) 308-90-60
+			a.promtex-info__mail(href="#") info@prom-tex.org
+			a.promtex-info__youtube(href="#") YouTube-канал компании
+
+
+	h1 HEADER
+	header.header
+		//HEADER TOP
+		.header-top
+			.container
+				//HEADER TOP ==> BRAND
+				a.brand(href="#")
+					.brand-logo
+						img(src="images/logo.svg" alt="")
+					.brand-cnt 
+						.brand__title Промтекс
+						.brand__slogan
+							span Испытательные стенды
+							span Датчики
+							span Измерительная электроника
+
+				//HEADER TOP ==> DESTRIBUTE
+				.official-distributor
+					.official-distributor__title Официальный дистрибьютор
+					ul.official-distributor__list.distributor-list
+						li.distributor-list__item
+							a.distributor-list__link(href="#") 
+								img.distributor-list__link-img(src="images/distributor-logo/distributor__1.png" alt="")
+						li.distributor-list__item
+							a.distributor-list__link(href="#") 
+								img.distributor-list__link-img(src="images/distributor-logo/distributor__2.png" alt="")
+						li.distributor-list__item
+							a.distributor-list__link(href="#") 
+								img.distributor-list__link-img(src="images/distributor-logo/distributor__3.png" alt="")
+						li.distributor-list__item
+							a.distributor-list__link(href="#") 
+								img.distributor-list__link-img(src="images/distributor-logo/distributor__1.png" alt="")
+						li.distributor-list__item
+							a.distributor-list__link(href="#") 
+								img.distributor-list__link-img(src="images/distributor-logo/distributor__2.png" alt="")
+
+				//HEADER TOP ==> HEADER INFO
+				.promtex-info
+					a.promtex-info__tel(href="#") 8 (495) 308-90-60
+					a.promtex-info__mail(href="#") info@prom-tex.org
+					a.promtex-info__youtube(href="#") YouTube-канал компании
+		
+		//HEADER BOTTOM
+		.header-bottom
+			.container
+				//NAV PANEL
+				-var navList = ['Продукция', 'Области использования', 'Решения', 'Услуги', 'О нас', 'Контакты'];
+				nav.nav-panel
+					ul.nav-list
+						each links in navList
+							li.nav-list__item
+								a.nav-list__link(href="#")= links
+
+				//HEADER SEACH
+				form.header-search(action="#" role="search")
+					input.header-search__input(type="text" placeholder="Поиск по марке и модели")
+					.header-search__submit
+						input(type="submit" value="")
+	
+
+	div(style="height: 100px")
+
+//====================section
+section
+	h1.text-center FOOTER --> REFENCES
+	.container(style="background: #000; padding: 60px 0")
+		-var List = [{title: 'Испытательные стенды', list: ['Системы испытания моторов и двигателей', 'Системы испытания гидравлических компонентов', 'Системы испытания трансмиссий', 'Роликовые стенды испытания двигателей', 'Стенды для испытания генераторов', 'Динамометры для сельского хозяйства']}]
+
+
+		mixin references-card(data)
+			.references__title= data.title
+			ul.references__list.references-list
+				each links in data.list
+					li.references-list__item
+						a.references-list__link(href="#")= links
+
+		for data in List
+			+references-card(data)
+
+
+	h1.text-center FOOTER
+	.footer
+		//FOOTER TOP
+		.footer-top
+			.container
+				-var referencesLists = ['Системы испытания моторов и двигателей', 'Системы испытания гидравлических компонентов', 'Системы испытания трансмиссий', 'Роликовые стенды испытания двигателей', 'Стенды для испытания генераторов', 'Динамометры для сельского хозяйства'];
+				.references
+					.references__title Испытательные стенды
+					ul.references__list.references-list
+						each links in referencesLists
+							li.references-list__item
+								a.references-list__link(href="#")= links
+
+				-var referencesLists = ['Датчики перемещения', 'Датчики крутящего момента', 'Измерение усилия веса'];
+				.references
+					.references__title Датчики
+					ul.references__list.references-list
+						each links in referencesLists
+							li.references-list__item
+								a.references-list__link(href="#")= links
+
+				-var referencesLists = ['Одноканальная телеметрия на вал', 'Многоканальная телеметрия на вал', 'Многоканальная телеметрия на колесо или торец вала', 'Телеметрия для невращающихся объектов'];
+				.references
+					.references__title Телеметрические системы
+					ul.references__list.references-list
+						each links in referencesLists
+							li.references-list__item
+								a.references-list__link(href="#")= links
+
+				.references
+					.references__title Гидромуфты
+
+				-var referencesLists = ['Электроника', 'Программное обеспечение'];
+				.references
+					.references__title Электроника и ПО
+					ul.references__list.references-list
+						each links in referencesLists
+							li.references-list__item
+								a.references-list__link(href="#")= links
+
+				-var referencesLists = ['Автомобилестроение', 'Аэрокосмическая отрасль', 'Добывающая промышленность', 'Судостроение', 'Сельское хозяйство', 'Тяжёлое машиностроение', 'Строительство', 'Железнодорожная отрасль', 'Энергетика'];
+				.references
+					.references__title Области использования
+					ul.references__list.references-list
+						each links in referencesLists
+							li.references-list__item
+								a.references-list__link(href="#")= links
+
+				-var referencesLists = [''];
+				.references
+					.references__title Измерение крутящего момента
+
+				-var referencesLists = ['С вращающихся узлов', 'Со стационарных объектов'];
+				.references
+					.references__title Многоканальный сбор данных
+					ul.references__list.references-list
+						each links in referencesLists
+							li.references-list__item
+								a.references-list__link(href="#")= links
+
+				-var referencesLists = ['Моторов и двигателей', 'Гидравлических компонентов', 'Трансмиссий', 'Генераторов'];
+				.references
+					.references__title Испытание
+					ul.references__list.references-list
+						each links in referencesLists
+							li.references-list__item
+								a.references-list__link(href="#")= links
+
+		//FOOTER BOTTOM
+		.footer-bottom
+			.container
+				.footer-promtex
+					.footer-promtex-left
+						.copyright © ООО «Промтекс», 2017
+						address 115432, г. Москва, 2-й Кожуховский <br/> пр-д, д.29, к.2, стр.16
+					.footer-promtex-rigth
+						a(href="tel:8(495)308-90-60") 8 (495) 308-90-60
+						a(href="mail:hello@prom-tex.ru") hello@prom-tex.ru
+					
+				.footer-redstar
+					a.redstar-lisence(href="#")
+						.redstar-lisence__text
+							span Создание сайта
+							span Redstar Digital Agency
+						.redstar-lisence__logo
+							img(src="images/redstar-logo.svg" alt="")
+
+
+
+
+div(style="height: 100px")
+//====================section MAIN PAGE
+section
+	h1.text-center BANNER
+	.swiper-container(id="banner")
+		.swiper-wrapper.banner
+			-for(var i = 0; i < 10; i++)
+				.swiper-slide.banner__item
+					.content
+						| БАННЕР !{i + 1}
+		// Add Pagination
+		.swiper-pagination.banner-pagination
+		// Add Arrows
+		.swiper-button-next.banner-nav.banner-nav__next
+		.swiper-button-prev.banner-nav.banner-nav__prev
+
+
+	h1.text-center NEWS ASSIDE VERSION
+	-var newsAssideList = [{time: '21 апреля 2017', title: 'Приглашаем Вас посетить наш стенд на выставке'}, {time: '21 апреля 2017', title: 'Наша компания стала эксклюзивным представителем фирмы KMT (Германия)'}, {time: '21 апреля 2017', title: 'Выставка "Дороги. Мосты. Тоннели 2012" !'}, {time: '21 апреля 2017', title: 'Приглашаем Вас посетить наш стенд на выставке '}, {time: '21 апреля 2017', title: 'Приглашаем Вас посетить наш стенд на выставке'}, {time: '21 апреля 2017', title: 'Наша компания стала эксклюзивным представителем фирмы KMT (Германия)'}, {time: '21 апреля 2017', title: 'Выставка "Дороги. Мосты. Тоннели 2012" !'}, {time: '21 апреля 2017', title: 'Приглашаем Вас посетить наш стенд на выставке '}];
+
+	.container
+		.row
+			.col-lg-4
+				ul.column-list.news-asside-list
+					li.column-list__item
+						// NEWS ASSIDE
+						
+						mixin news-asside-card(data)
+							.news-asside
+								time.news-asside__time(datetime="") !{data.time}
+								a.news-asside__title(href="#") !{data.title}
+
+						for data in newsAssideList
+							+news-asside-card(data)
+			.col-lg-12
+				| alksdj lasjd
+
+
+
+div(style="height: 100px")
+//====================section
+section
+	h1.text-center NEWS CARD
+	.container
+		.news-card-wrapper
+			//NEWS CARD
+			.news-card
+				.news-card-prewiev
+					img.news-card__img(src="images/news-card__img.png" alt="")
+				.news-card-cnt
+					time.news-card__time(datetime="") 21 апреля 2017
+					a.news-card__title(href="#") Приглашаем Вас посетить наш стенд на выставке
+
+			.news-card
+				.news-card-prewiev
+					img.news-card__img(src="http://russiatrek.org/blog/wp-content/uploads/2014/11/birds-eye-views-of-moscow-russia-12.jpg" alt="")
+				.news-card-cnt
+					time.news-card__time(datetime="") 21 апреля 2017
+					a.news-card__title(href="#") Наша компания стала эксклюзивным представителем фирмы KMT (Германия)
+
+			.news-card
+				.news-card-prewiev
+					img.news-card__img(src="http://artinrussia.org/wp-content/uploads/iO0QGN1YbIRpYOEsR2bdmg.jpg" alt="")
+				.news-card-cnt
+					time.news-card__time(datetime="") 21 апреля 2017
+					a.news-card__title(href="#") Выставка "Дороги. Мосты. Тоннели 2012" !
+
+
+	h1.text-center CATALLOG PRODUCTION
+	.container
+		//CATALLOG
+		.template
+			.col-12
+				.catallog-wrap
+					-for(var i = 0; i < 3; i++)
+						a.catallog-prod(href="#" data-title="title-1")
+							.catallog-prod-cnt
+								.catallog-prod__type Испытательные стенды
+								.catallog-prod__title Системы испытания моторов и двигателей
+								.catallog-prod__subTitle Системы испытания моторов и двигателей
+							.catallog-prod-overlay
+								.catallog-prod__type Испытательные стенды
+								.catallog-prod__title Системы испытания моторов и двигателей
+								.catallog-prod__subTitle Системы испытания моторов и двигателей
+
+
+	h1.text-center Телеметрические системы
+	.container
+		.template
+			.col-12
+				.catallog-wrap
+					.catallog-item
+						.catallog-item-cnt
+							.catallog-item__corp Power Test Inc.
+							.catallog-item__title Портативный динамометр-гидротормоз серии Z
+							.catallog-item__img-wrap
+								img(src="http://www.prom-tex.org/img/work/nomencl/s_337.jpg" alt="")
+						.catallog-item-overlay
+							.catallog-item__corp Power Test Inc.
+							.catallog-item__title Портативный динамометр-гидротормоз серии Z
+							dl.catallog-item__params
+								dt Мощность
+								dd 100–4500 л/с
+
+								dt Частота вращения
+								dd До 4000 об/мин
+
+								dt Крутящий момент
+								dd До 20340 Н*м
+
+								dt Назначение
+								dd Испытание судовых и автомобильных двигателей
+
+							a.catallog-item__btn(href="#") Показать подробности
+
+	h1.text-center ACCORDION
+	.container
+		div(style="width: 280px")
+			//- include ../00_type-elements/__menu-list
+
+	h1.text-center CONTACTS
+	.container
+		div(style="width: 280px")
+			address.contacts(itemprop="address" itemscope itemtype="http://schema.org/PostalAddress")
+				dl.contacts-list
+					dt.contacts__types Телефон
+					dd.contacts__phone 
+						a.contacts__link(href="tel:+7 (495) 308-90-60" itemprop="telephone") +7 (495) 308-90-60
+
+					dt.contacts__types Почта
+					dd.contacts__email 
+						a.contacts__link(href="mailto:info@magrtol.ru" itemprop="email") info@magrtol.ru
+
+					dt.contacts__types Адрес
+					dd.contacts__address
+						span(itemprop="addressLocality") г. Москва, 
+						span(itemprop="streetAddress") 2-й Кожуховский пр-д, д.&nbsp;29, к. 2, стр. 16 
+	
+
+	h1.text-center BLOCKQUOTE
+	.container
+		blockquote
+			p.blockquote-cnt DES 410 и DES 411 могут управляться аналоговым или цифровым заданным значением, приходящим из перефирийного электронного устройства
+
+	
+	h1.text-center LISTS
+	.container
+		-var indexList = ['Простота сборки и эксплуатации', 'Тензометрические датчики (>350 Ом)в полно- и полумостовой конфигурации', 'Автоматическая установка нуля на приемнике', 'Настройка усиления на приемнике: 250-8000', 'Внешняя калибровка шунтом', 'Индуктивная цифровая передача данных', 'Дальность действия до 25мм (35мм опция)', 'Отсутствие влияния радиочастот', 'Возможность одновременной работы с несколькими системами', 'Ширина полосы частот сигнала 0…1200Гц (-3дБ)', 'Выход +/-10В и цифровой (опционально)', 'Погрешность системы <0.2%'];
+		ul.index-list
+			each list in indexList
+				li.index-list__item= list
+	
+		div(style="height: 20px")
+		
+		-var markedList = indexList;
+		ul.marked-list
+			each list in markedList
+				li.marked-list__item= list
+					
+
+	h1.text-center FOTORAMA
+	.container
+		.fotorama(data-width="" data-maxwidth="100%" data-ratio="16/9" data-allowfullscreen="true" data-nav="thumbs" data-fit="cover")
+			-for(var i = 0; i < 5; i++)
+				img(src="//s.fotorama.io/1.jpg" alt="")
+				img(src="//s.fotorama.io/2.jpg" alt="")
+				img(src="//s.fotorama.io/3.jpg" alt="")
+				img(src="//s.fotorama.io/4.jpg" alt="")
+				img(src="//s.fotorama.io/5.jpg" alt="")
+
+div(style="height: 100px")
+//====================section PRODUCT
+section
+	.container(style="width: 100%")
+		.product-accompanying
+			.product-accompanying__title Сопутствующая продукция
+			ul.product-accompanying__list
+				-for( var i = 0; i < 10; i++ )
+					li.product-accompanying__item
+						.product-pre
+							.product-pre-img
+								img.product-pre__img(src="//s.fotorama.io/1.jpg" alt="")
+							.product-pre-cnt
+								.product-pre__title Динамометры-гидротормоза серии 45X
+								.product-pre__type Телеметрические системы
+
+
+
+	h1.text-center BREADCRUMP
+
+	-var breadcrumbList = ['Промтекс', 'Решения', 'Категория', 'Подкатегория', 'Контроллер частоты пращения с закрытым контуром 610'];
+	ul.breadcrumb
+		each list in breadcrumbList
+			li.breadcrumb__item
+				a.breadcrumb__link(hr4ef="#")= list
+
+
+	h1.text-center
+		.container
+			.template
+				.col-8
+					.product-btn-group
+						a.product-btn-group__item(href="#" data="order-call") Заказать звонок
+						a.product-btn-group__item(href="#" data="send application") Отправить заявку
+					
+
+
+	h1.text-center TABS
+	-var tabsNavList = ['Описание', 'Характеристики', 'Документация', 'Чертежи'];
+	.container
+		.template
+			.col-4
+				include ../00_type-elements/__menu-list
+			.col-12
+				.product
+					span.preH1 KMT Telemetry
+					h1 Контроллер частоты вращения с закрытым контуром 6100
+					.template
+						.col-8 
+							.fotorama(data-width="" data-maxwidth="100%" data-ratio="16/9" data-allowfullscreen="true" data-nav="thumbs" data-fit="cover")
+								-for(var i = 0; i < 5; i++)
+									img(src="//s.fotorama.io/1.jpg" alt="")
+									img(src="//s.fotorama.io/2.jpg" alt="")
+									img(src="//s.fotorama.io/3.jpg" alt="")
+									img(src="//s.fotorama.io/4.jpg" alt="")
+									img(src="//s.fotorama.io/5.jpg" alt="")
+						.col-8
+							p Источники питания DES 410 и DES 411 предназначены для полного диапазона индуктивных и магнитопорошковых динамометров Magtrol. Во избежании повреждения близлежащих электронных модулей, DES 410 и DES 411 выполнены в прочном алюминиевом корпусе. 
+							p Этот корпус должен быть установлен непосредственно на испытательном стенде как можно ближе к динамометру.
+
+					.tabs
+						.tabs-nav
+							-for(var i = 0; i < tabsNavList.length; i++)
+								if (i != 0)
+									button.tabs__button(onclick="openTab(event,'"+tabsNavList[i]+"')") !{tabsNavList[i]}
+								else 
+									button.tabs__button.tabs__button--active(onclick="openTab(event,'"+tabsNavList[i]+"')") !{tabsNavList[i]}
+								
+
+						.tabs-cnt
+							-for(var i = 0; i < tabsNavList.length; i++)
+								if (i !=0)
+									.tabs__item(id=''+ tabsNavList[i] style="display:none")
+										h2 !{tabsNavList[i]} sdkf jldksjfk jsdlj fldksj f
+										p la lkjdf ldjsflk sdlfkjdks
+								else 
+									.tabs__item(id='' + tabsNavList[i])
+										
+										.tabs__text
+											h5 Подзаголовок
+											p Источники питания DES 410 и DES 411 предназначены для полного диапазона индуктивных и магнитопорошковых динамометров Magtrol. Во избежании повреждения близлежащих электронных модулей, DES 410 и DES 411 выполнены в прочном алюминиевом корпусе. Этот корпус должен быть установлен непосредственно на испытательном стенде как можно ближе к динамометру.
+											p DES 410 и DES 411 могут управляться аналоговым или цифровым заданным значением, приходящим из перефирийного электронного устройства, в идеальном варианте из контроллера динамометра Magtrol  DSP 7001.
+
+											h5 Подзаголовок
+											p Источники питания DES 410 и DES 411 предназначены для полного диапазона индуктивных и магнитопорошковых динамометров Magtrol. Во избежании повреждения близлежащих электронных модулей, DES 410 и DES 411 выполнены в прочном алюминиевом корпусе. Этот корпус должен быть установлен непосредственно на испытательном стенде как можно ближе к динамометру.
+											p DES 410 и DES 411 могут управляться аналоговым или цифровым заданным значением, приходящим из перефирийного электронного устройства, в идеальном варианте из контроллера динамометра Magtrol  DSP 7001.
+										
+										-var breadcrumbList = ['Промтекс', 'Решения', 'Категория', 'Подкатегория', 'Контроллер частоты пращения с закрытым контуром 610'];
+										ul.breadcrumb
+											each list in breadcrumbList
+												li.breadcrumb__item
+													a.breadcrumb__link(hr4ef="#")= list
+
+										.product-accompanying
+											.product-accompanying__title Сопутствующая продукция
+											ul.product-accompanying__list
+												-for( var j = 0; j < 10; j++ )
+													li.product-accompanying__item
+														.product-pre
+															.product-pre-img
+																img.product-pre__img(src="//s.fotorama.io/1.jpg" alt="")
+															.product-pre-cnt
+																.product-pre__title Динамометры-гидротормоза серии 45X
+																.product-pre__type Телеметрические системы
+
+
+
+				
+div(style="height: 100px")

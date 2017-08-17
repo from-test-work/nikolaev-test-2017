@@ -1,0 +1,8 @@
+mixin cardContext(data)
+	li.tile-template__item
+		.tile-template__asside
+			.tile-template__logo-wrap
+				img.tile-template__logo(src="/images/" + data.img , alt="")
+		.tile-template__cnt
+			.tile-template__title !{data.title}
+			.tile-template__text !{data.text}

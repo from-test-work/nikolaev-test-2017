@@ -1,0 +1,106 @@
+/*
+* @section      Components
+* @Components	Baner Testimonials
+*/
+
+.carousel{
+  max-width: 770px;
+  margin: 60px auto 25px;
+  overflow: hidden;
+  &__item{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__logo{
+    height: 60px;
+  }
+
+  &__comment{
+    text-align: center;
+    font-family: $lato-font-family;
+    opacity: 0.8;
+    width: 100%;
+  }
+
+  &__avatar-wrapp{
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+  }
+  &__avatar{
+    max-width: 80px;
+    border-radius: 50%;
+  }
+
+  &__name-and-position{
+    text-align: center;
+  }
+
+  &__name,
+  &__position{
+    color: $primary;
+    font-family: $lato-font-family;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  &__name,
+  &__position{
+    position: relative;
+    &:before{
+      position: absolute;
+      content: ',';
+      right: -5px;
+
+      color: $primary;
+      font-family: $lato-font-family;
+      font-size: 24px;
+      line-height: 30px;
+    }
+    &:last-child:before{
+      display: none;
+    }
+  }
+
+  &__pagination{
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+.carousel{
+  * + &__comment{
+    margin-top: 20px;
+  }
+  * + &__avatar-wrapp{
+    margin-top: 40px;
+  }
+
+  * + &__name-and-position{
+    margin-top: 30px;
+  }
+
+  &__name + &__position{
+    margin-left: 10px;
+  }
+}
+
+
+
+
+.carousel__pagination{
+  .swiper-pagination-bullet-active{
+    background: $default;
+  }
+
+  .swiper-pagination-bullet + .swiper-pagination-bullet {
+    margin-left: 10px;
+  }
+}
+

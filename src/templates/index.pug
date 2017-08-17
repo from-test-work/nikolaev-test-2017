@@ -1,0 +1,26 @@
+extends layout
+block mobile
+	nav#slide-menu
+		-var slideMenuList = [{href: "aboutUs", text: 'About Us'}, {href: "features", text: 'Features'}, {href: "advantages", text: 'Advantages'}, {href: "testimonials", text: 'Testimonials'}, {href: "ourTeam", text: 'Our Team'}, {href: "faqs", text: 'FAQs'}, {href: "howItsWork", text: 'How Its Work'}, {href: "latestFromBlog", text: 'Latest From the Blog'}, {href: "ourPartners", text: 'Our partners'}, {href: "contacts", text: 'Contact us'}];
+		ul
+			each item in slideMenuList
+				li
+					a.go_to(href="#" + item.href )= item.text
+
+block title
+	title Main
+
+block main
+	include 02_main/_main-index
+
+block css
+	link(href="https://fonts.googleapis.com/icon?family=Material+Icons")
+	link(href="css/libs/swiper.css" rel="stylesheet")
+	link(href="css/libs/fancybox.css" rel="stylesheet")
+block js
+	script(type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+	script(type='text/javascript' src="js/libs/swiper.js")
+	script(type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js")
+	script(type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js")
+
+

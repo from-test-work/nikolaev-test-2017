@@ -1,0 +1,27 @@
+/*
+* @section      Components
+* @Components	Copyrate
+*/
+
+.copyrate {
+  margin: 70px auto 0;
+  opacity: 0.1;
+  color: #ffffff;
+  text-align: center;
+  span, .copyright-year, .pravo {
+    display: inline-block;
+  }
+}
+
+.copyrate {
+  * + span{
+    margin-left: 5px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .copyrate{
+    margin-top: 30px;
+  }
+}

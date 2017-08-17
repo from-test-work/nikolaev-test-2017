@@ -1,0 +1,87 @@
+/*
+* @section      Components
+* @Components	Tile Template
+*/
+
+.features-template{
+  width: calc(50% - 15px);
+
+  &__item{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__asside{
+    width: 70px;
+    display: block;
+    text-align: center;
+
+  }
+  &__cnt{
+    width: calc(100% - 70px - 30px);
+  }
+
+
+  &__logo{
+    height: 53px;
+  }
+
+  &__title{
+    color: $default;
+    font-family: $lato-font-family;
+  }
+  &__text{
+    color: $default;
+    font-family: $lato-font-family;
+    opacity: 0.8;
+  }
+}
+
+
+.features-template{
+  &__item + *{
+    margin-top: 60px;
+  }
+
+  &__title + &__text{
+    margin-top: 30px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .features-template{
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .features-template{
+    &__item{
+      flex-direction: column;
+    }
+    &__asside,
+    &__cnt{
+      width: 100%;
+    }
+    &__cnt{
+      margin-top: 15px;
+    }
+    &__title + &__text{
+      margin-top: 10px;
+    }
+    &__item + *{
+      margin-top: 30px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

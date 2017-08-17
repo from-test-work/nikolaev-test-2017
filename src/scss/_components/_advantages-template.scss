@@ -1,0 +1,89 @@
+/*
+* @section      Components
+* @Components	Advantages Template
+*/
+
+.advantages-template{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  counter-reset: list1;
+  margin: 30px -15px 0;
+  &__item{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 270px;
+    margin: 30px 15px;
+  }
+
+  &__num{
+    width: 90px;
+    height: 90px;
+    background: $white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    padding-left: 0;
+    list-style-type: none;
+    &:before {
+      counter-increment: list1;
+      content: counter(list1) ". ";
+      color: $secondary;
+      font-family: $lato-font-family;
+      font-size: 45px;
+      line-height: 24px;
+      font-weight: 700;
+    }
+
+  }
+  &__title{
+    text-align: center;
+    font-family: $lato-font-family;
+  }
+  &__text{
+    text-align: center;
+    font-family: $lato-font-family;
+    opacity: 0.8;
+    width: 100%;
+  }
+}
+
+.advantages-template{
+  * + &__title{
+    margin-top: 30px;
+  }
+
+  &__title + &__text{
+    margin-top: 35px;
+  }
+}
+
+
+
+@media (max-width: ($screen-xs-min - 1)){
+  .advantages-template{
+    &__item{
+      margin: 10px 5px;
+    }
+  }
+}
+
+@media (max-width: ($screen-xxs-min - 1)){
+  .advantages-template{
+    &__item{
+      width: 100%;
+    }
+  }
+
+  .advantages-template{
+    &__title + &__text{
+      margin-top: 15px;
+    }
+  }
+}

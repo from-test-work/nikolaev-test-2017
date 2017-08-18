@@ -11,8 +11,9 @@ nav#slide-menu {
   display: block;
   float: left;
   width: 100%;
-  max-width: 284px;
+  max-width: 285px;
   height: 100%;
+  box-shadow: inset -2px 0px 5px -2px rgba(0,0,0,0.75);
   transition: all 300ms;
 
   > ul {
@@ -44,7 +45,6 @@ nav#slide-menu {
 body.menu-active nav#slide-menu { left: 0; }
 body.menu-active nav#slide-menu ul { left: 0; opacity: 1; }
 
-
 #page {
   position: fixed;
   top: 0;
@@ -62,9 +62,11 @@ body.menu-active nav#slide-menu ul { left: 0; opacity: 1; }
   width: 36px;
   height: 36px;
   cursor: pointer;
+  background: #666666;
   border-radius: 5px;
   transition: all 300ms;
   z-index: 99999;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   &:before{
     position: absolute;
     content: '\f0c9';
@@ -80,19 +82,18 @@ body.menu-active nav#slide-menu ul { left: 0; opacity: 1; }
 
 body.menu-active div#page {
   left: 285px;
-  border-radius: 7px 0 0 7px;
   position: absolute;
+  width: calc(100% - 285px);
 }
+
 body.menu-active div#page .menu-trigger {
   left: 235px;
   &:before{
     position: absolute;
-    color: $default;
     content: '\f00d';
     z-index: 2;
   }
 }
-
 
 
 
